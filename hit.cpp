@@ -5,7 +5,7 @@
 
 bool hit_test(float x, float y, float z) {
     float x2 = x * x;
-    return ((x2 * x2 - 2 * x * x2) + 4 * (y * y + z * z)) < 0.0f;
+    return ((x2 * (x2 - 2 * x)) + 4 * (y * y + z * z)) < 0.0f;
 }
 
 // x_min, x_max, y_min, y_max, z_min, z_max
