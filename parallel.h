@@ -3,7 +3,6 @@
 
 #include "hit.h"
 #include "pcg.h"
-#include "removed/xoroshiro.h"
 #include "xorshift.h"
 
 void oneThreadPCG(long long & hit, const long long N, float x_min, float x_max, float y_min, float y_max, float z_min, float z_max) {
