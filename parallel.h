@@ -3,7 +3,6 @@
 
 #include "hit.h"
 #include "pcg.h"
-#include "removed/xoroshiro.h"
 #include "xorshift.h"
 
 void oneThreadPCG(long long & hit, const long long N, float x_min, float x_max, float y_min, float y_max, float z_min, float z_max) {
@@ -20,7 +19,6 @@ void oneThreadPCG(long long & hit, const long long N, float x_min, float x_max, 
     rng_z.state = 11u + omp_get_wtime() + omp_get_thread_num();
     rng_z.inc = (129u + thread_n * 15) | 1;
 
-    long long local_hit = 0;
     float x, y, z;
     x = random_float_in_range(&rng_x, x_min, x_max);
     y = random_float_in_range(&rng_y, y_min, y_max);

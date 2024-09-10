@@ -15,4 +15,4 @@ ENDIF()
 
 
 add_executable(omp_montecarlo hit.cpp main.cpp)
-add_executable(testing test/test.cpp hit.cpp)
+#add_executable(testing test/test.cpp hit.cpp)

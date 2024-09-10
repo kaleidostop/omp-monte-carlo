@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <numeric>
 
 static const long long N = 100000000;
 
@@ -192,7 +193,7 @@ void test_Xorshift_num_threads() {
     std::cout << "Xorshift num threads tested\n";
 }
 
-int main(int argc, char** argv) {
+int main() {
     testOneThread();
     test_MT_num_threads();
     test_Xorshift_num_threads();

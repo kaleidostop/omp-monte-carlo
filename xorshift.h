@@ -11,10 +11,6 @@ public:
         return x;
     }
 
-//    float nextFloat(float min, float max) {
-//        return min + static_cast<float>(next()) / static_cast<float>(UINT32_MAX) * (max - min);
-//    }
-
     float nextFloat(const float & min, const float & max) {
         union {
             uint32_t i;
