@@ -16,6 +16,17 @@ uint32_t pcg32_random_r(pcg32_random_t* rng)
     return (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
 }
 
+//float random_float_in_range(pcg32_random_t* rng, const float & min, const float & max) {
+//    return static_cast<float>(pcg32_random_r(rng)) / 4294967295.0f * (max - min) + min;
+//}
+
+
 float random_float_in_range(pcg32_random_t* rng, const float & min, const float & max) {
-    return static_cast<float>(pcg32_random_r(rng)) / 4294967295.0f * (max - min) + min;
+    union {
+        uint32_t i;
+        float f;
+    } u;
+    u.i = (pcg32_random_r(rng) >> 9) | 0x3F800000;
+
+    return (u.f - 1.f) * (max - min) + min;
 }
