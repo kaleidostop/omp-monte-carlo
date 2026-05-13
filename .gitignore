@@ -1,3 +1,7 @@
+## test
+test/*
+!test/test.cpp
+
 ## C++
 
 # Prerequisites
@@ -250,6 +254,7 @@ cython_debug/
 .idea/
 
 ## CMake
+cmake-build-*/
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles

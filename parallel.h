@@ -153,7 +153,7 @@ void MultiThreadPCG_static(long long & hit, const long long N, int n_threads, in
         y = random_float_in_range(&rng_y, y_min, y_max);
         z = random_float_in_range(&rng_z, z_min, z_max);
 
-#pragma omp for schedule(static, chunk_size) nowait
+#pragma omp for schedule(static, chunk_size)
         for (int i = 0; i < N; ++i) {
             if (i % 3 == 0) {
                 x = random_float_in_range(&rng_x, x_min, x_max);
